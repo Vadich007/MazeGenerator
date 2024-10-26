@@ -115,84 +115,16 @@ s, вычисляя при этом расстояние (минимальное
 
 ## Сборка проекта
 
-Для того чтобы собрать проект, и проверить, что все работает корректно, можно
-запустить из модального окна IDEA
-[Run Anything](https://www.jetbrains.com/help/idea/running-anything.html)
-команду:
+Для того чтобы запустить проект на Windows:
 
 ```shell
-mvn clean verify
+./mvnw exec:java -Dexec.mainClass="backend.academy.Main"
 ```
 
-Альтернативно можно в терминале из корня проекта выполнить следующие команды.
-
-Для Unix (Linux, macOS, Cygwin, WSL):
+Для того чтобы запустить проект на Linux:
 
 ```shell
-./mvnw clean verify
-```
-
-Для Windows:
-
-```shell
-mvnw.cmd clean verify
-```
-
-Для окончания сборки потребуется подождать какое-то время, пока maven скачает
-все необходимые зависимости, скомпилирует проект и прогонит базовый набор
-тестов.
-
-Если вы в процессе сборки получили ошибку:
-
-```shell
-Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion failed with message:
-JDK version must be at least 22
-```
-
-Значит, версия вашего JDK ниже 22.
-
-Если же получили ошибку:
-
-```shell
-Rule 1: org.apache.maven.enforcer.rules.version.RequireMavenVersion failed with message:
-Maven version should, at least, be 3.8.8
-```
-
-Значит, у вас используется версия maven ниже 3.8.8. Такого не должно произойти,
-если вы запускаете сборку из IDEA или через `mvnw`-скрипты.
-
-Далее будут перечислены другие полезные команды maven.
-
-Запуск только компиляции основных классов:
-
-```shell
-mvn compile
-```
-
-Запуск тестов:
-
-```shell
-mvn test
-```
-
-Запуск линтеров:
-
-```shell
-mvn checkstyle:check modernizer:modernizer spotbugs:check pmd:check pmd:cpd-check
-```
-
-Вывод дерева зависимостей проекта (полезно при отладке транзитивных
-зависимостей):
-
-```shell
-mvn dependency:tree
-```
-
-Вывод вспомогательной информации о любом плагине (вместо `compiler` можно
-подставить интересующий вас плагин):
-
-```shell
-mvn help:describe -Dplugin=compiler
+./mvn exec:java -Dexec.mainClass="backend.academy.Main"
 ```
 ## Инструкция по использованию
 
