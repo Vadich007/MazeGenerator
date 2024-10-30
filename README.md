@@ -118,14 +118,17 @@ s, вычисляя при этом расстояние (минимальное
 Для того чтобы запустить проект на Windows:
 
 ```shell
+./mvnw compile
 ./mvnw exec:java -Dexec.mainClass="backend.academy.Main"
 ```
 
 Для того чтобы запустить проект на Linux:
 
 ```shell
+./mvn compile
 ./mvn exec:java -Dexec.mainClass="backend.academy.Main"
 ```
+
 ## Инструкция по использованию
 
 На данный момент приложение поддерживает только консольный интерфейс.
